@@ -1,0 +1,162 @@
+/* Navbar container */
+.navbar {
+    background-color: #2d3748; /* Dark gray background */
+    padding: 16px 32px;
+  }
+  
+  /* Container for aligning navbar items */
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Navbar title */
+  .navbar .text-2xl {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Navbar links container */
+  .navbar .space-x-6 {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* Individual navbar links */
+  .navbar .space-x-6 a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .navbar .space-x-6 a:hover {
+    color: #cbd5e0; /* Light gray color on hover */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .navbar .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar .space-x-6 {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  /* Banner section */
+.banner {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    
+  }
+  
+  .banner-overlay {
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 1vmin 7vmin;
+    box-sizing: border-box;
+    margin-top: 5vmin;
+
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .banner h1 {
+    font-size: 3rem; /* Adjust for different screen sizes */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  
+  .banner p {
+    font-size: 1.125rem; /* Adjust font size */
+    margin-bottom: 2rem;
+  }
+  
+  .btn-shop-now {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-shop-now:hover {
+    background-color: #2c5282; /* Darker blue on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2.25rem;
+    }
+  
+    .banner p {
+      font-size: 1rem;
+    }
+  
+    .btn-shop-now {
+      font-size: 1rem;
+    }
+  }
+  .navbar {
+    position: relative;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .search-bar input {
+    width: 305px;
+    height: 5vmin;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    margin-left: 8px;
+  }
+  
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f7f7f7;
+  }
+  
