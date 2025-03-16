@@ -11,7 +11,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5000/categories');
+        const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/categories');
         if (!response.ok) {
           throw new Error('Unable to fetch categories');
         }

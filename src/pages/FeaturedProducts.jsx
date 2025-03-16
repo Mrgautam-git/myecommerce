@@ -14,7 +14,7 @@ function FeaturedProducts() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/featured_product');
+                const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/featured_product');
                 if (!response.ok) {
                     throw new Error('Failed to fetch featured products');
                 }

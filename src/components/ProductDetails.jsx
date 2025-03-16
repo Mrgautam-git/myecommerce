@@ -14,7 +14,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+        const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/products/${productId}`);
         if (!response.ok) {
           throw new Error(`Failed to fetch product: ${response.statusText}`);
         }
@@ -22,7 +22,7 @@ const ProductDetails = () => {
         setProduct(data);
 
         // Fetch related products
-        const relatedResponse = await fetch(`http://localhost:5000/products?category_id=${data.category_id}`);
+        const relatedResponse = await fetch(`https://ecommbackend-2-f8pa.onrender.com/products?category_id=${data.category_id}`);
         if (!relatedResponse.ok) {
           throw new Error(`Failed to fetch related products: ${relatedResponse.statusText}`);
         }
@@ -39,7 +39,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/products');
+        const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/products');
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }

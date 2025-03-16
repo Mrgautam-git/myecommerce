@@ -40,14 +40,14 @@ const Checkout = () => {
 
     const fetchCartData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/cart?userId=${userId}`);
+        const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/cart?userId=${userId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch cart data');
         }
         const cartData = await response.json();
 
         const cartWithProductDetails = await Promise.all(cartData.map(async (item) => {
-          const productResponse = await fetch(`http://localhost:5000/api/products/${item.product_id}`);
+          const productResponse = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/products/${item.product_id}`);
           const productData = await productResponse.json();
           return {
             ...item,
@@ -67,7 +67,7 @@ const Checkout = () => {
 
     const fetchAddress = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/addresses?userId=${userId}`);
+        const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/addresses?userId=${userId}`);
         if (response.ok) {
           const addressData = await response.json();
           setExistingAddress(addressData);
@@ -125,7 +125,7 @@ const Checkout = () => {
       console.log("Order Data Sent:", orderData); // Debug: Log order data to verify it's correct
   
       // Send the order data to your backend
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Inform the server of JSON payload
@@ -153,15 +153,13 @@ const Checkout = () => {
     }
   };
   
-  
-  
-
+//Address submit code;
 
   const handleAddressSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const endpoint = existingAddress ? `http://localhost:5000/api/addresses/update` : `http://localhost:5000/api/addresses`;
+      const endpoint = existingAddress ? `https://ecommbackend-2-f8pa.onrender.com/api/addresses/update` : `https://ecommbackend-2-f8pa.onrender.com/api/addresses`;
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -197,7 +195,7 @@ const Checkout = () => {
 
   const handleDeleteAddress = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/addresses/${id}`, {
+      const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/addresses/${id}`, {
         method: 'DELETE',
       });
 

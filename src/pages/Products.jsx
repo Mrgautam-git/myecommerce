@@ -22,7 +22,7 @@ const Products = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:5000/categories'); // Fetch your categories from backend
+        const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/categories'); // Fetch your categories from backend
         const data = await response.json();
         setCategories(data); // Store categories in state
       } catch (err) {
@@ -48,7 +48,7 @@ const Products = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const url = `http://localhost:5000/products?search=${encodeURIComponent(
+        const url = `https://ecommbackend-2-f8pa.onrender.com/products?search=${encodeURIComponent(
           searchQuery
         )}&category_id=${selectedCategory || ''}`;
         const response = await fetch(url);
@@ -113,7 +113,7 @@ const addToCart = async (product) => {
     console.log("Cart Data Sent:", cartData); // Debug: Log cart data to verify it's correct
 
     // Send the data to your backend server to update the cart
-    const response = await fetch('http://localhost:5000/api/cart', {
+    const response = await fetch('https://ecommbackend-2-f8pa.onrender.com/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json', // Inform the server of JSON payload

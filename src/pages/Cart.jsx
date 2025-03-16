@@ -159,7 +159,7 @@ const Cart = () => {
 
     const fetchCartData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/cart?userId=${userId}`);
+        const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/cart?userId=${userId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch cart data');
         }
@@ -167,7 +167,7 @@ const Cart = () => {
         console.log("Cart data:", cartData); // Log the fetched data to see if cart_id exists
         
         const cartWithProductDetails = await Promise.all(cartData.map(async (item) => {
-          const productResponse = await fetch(`http://localhost:5000/api/products/${item.product_id}`);
+          const productResponse = await fetch(`https://ecommbackend-2-f8pa.onrender.com/api/products/${item.product_id}`);
           const productData = await productResponse.json();
     
           return {
@@ -225,7 +225,7 @@ const Cart = () => {
     try {
       console.log(`Updating quantity for item with id: ${id} to ${newQuantity}`);
   
-      const response = await fetch(`http://localhost:5000/cart/${id}`, {
+      const response = await fetch(`https://ecommbackend-2-f8pa.onrender.com/cart/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
