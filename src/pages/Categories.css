@@ -137,10 +137,13 @@ height: 59vmin;
   height: 6vmin;
   text-overflow: ellipsis; /* Add ellipsis for overflowing text */
 }
-@media (max-width: 480px){
+@media (max-width: 400px){
   .product-header {
     display: flex;
     align-items: center;
+}
+.product-details {
+  padding: 7vmin;
 }
 .list_product {
   max-width: 156px;
