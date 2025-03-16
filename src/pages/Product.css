@@ -121,8 +121,10 @@ p.error {
 /* Responsive Design */
 @media (max-width: 768px) {
   .category-buttons {
-    flex-direction: column;
-    align-items: center;
+         
+        flex-wrap: nowrap;
+        overflow: scroll;
+        justify-content: unset;
   }
 
   .product-card {
@@ -133,18 +135,21 @@ p.error {
 
 @media (max-width: 480px) {
   .product-card {
-    max-width: 45%;
-    margin: 10px 0;
-    padding: 10px;
+    max-width: 29%;
+    margin: 0px 0;
+    padding: 7px;
   }
-
+  .product-card p {
+    font-size: 12px;
+   
+}
   .category-btn {
     font-size: 14px;
     padding: 8px 15px;
   }
 
   .add-to-cart-btn {
-    font-size: 14px;
+    font-size: 11px;
     padding: 8px 15px;
   }
 }
